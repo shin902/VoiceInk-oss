@@ -1,6 +1,8 @@
-### this is a foke repo 
-### thanks for Beingpax
-### https://github.com/Beingpax/VoiceInk
+<div align="center">
+  <h1> this is a foke repo </h1>
+  <h2> thanks for Beingpax </h2>
+  <h3> https://github.com/Beingpax/VoiceInk </h3>
+</div>
 
 <div align="center">
   <img src="VoiceInk/Assets.xcassets/AppIcon.appiconset/256-mac.png" width="180" height="180" />
