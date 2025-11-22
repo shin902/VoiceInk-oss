@@ -120,7 +120,7 @@ class ElevenLabsTranscriptionService {
     }
 }
 
-final class ElevenLabsRealtimeTranscriptionService {
+final class ElevenLabsRealtimeTranscriptionService: RealtimeTranscriptionServiceProtocol {
     private let logger = Logger(subsystem: "com.example.VoiceInk", category: "ElevenLabsRealtimeTranscriptionService")
     private let urlSession: URLSession
     private var webSocketTask: URLSessionWebSocketTask?
@@ -148,7 +148,7 @@ final class ElevenLabsRealtimeTranscriptionService {
         webSocketTask != nil
     }
 
-    func startSession(audioFileURL: URL, modelName: String) async throws {
+    func startSession(audioFileURL: URL, modelName: String?) async throws {
         guard webSocketTask == nil else { return }
         guard let apiKey = UserDefaults.standard.string(forKey: "ElevenLabsAPIKey"), !apiKey.isEmpty else {
             throw CloudTranscriptionError.missingAPIKey
@@ -159,7 +159,7 @@ final class ElevenLabsRealtimeTranscriptionService {
         streamReadOffset = 0
         shouldStopStreaming = false
 
-        let normalizedModel = Self.normalizedModelName(modelName)
+        let normalizedModel = Self.normalizedModelName(modelName ?? "realtime_trans")
         guard let url = URL(string: "wss://api.elevenlabs.io/v1/speech-to-text/realtime?model_id=\(normalizedModel)") else {
             throw CloudTranscriptionError.apiRequestFailed(statusCode: -1, message: "Invalid ElevenLabs realtime endpoint")
         }

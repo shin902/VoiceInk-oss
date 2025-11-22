@@ -86,6 +86,13 @@ import Foundation
             isMultilingualModel: true,
             supportedLanguages: getLanguageDictionary(isMultilingual: true, provider: .nativeApple)
         ),
+        NativeAppleModel(
+            name: "apple-speech-realtime",
+            displayName: "Apple Speech Realtime",
+            description: "Apple Speech with realtime transcription previews. Requires macOS 26.",
+            isMultilingualModel: true,
+            supportedLanguages: getLanguageDictionary(isMultilingual: true, provider: .nativeApple)
+        ),
         
         // Parakeet Models
         ParakeetModel(
