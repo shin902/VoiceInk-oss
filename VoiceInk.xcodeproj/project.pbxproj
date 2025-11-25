@@ -495,10 +495,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = VoiceInk;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = NO;
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "VoiceInk needs to interact with your browser to detect the current website for applying website-specific configurations.";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "使用中のWebサイトを取得し、サイトごとの設定を適用するために、ブラウザとの連携アクセスが必要です。";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "VoiceInk needs access to your microphone to record audio for transcription.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "VoiceInk uses Apple Speech to provide realtime dictation previews from your microphone.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "音声を文字起こしするために、マイクへのアクセスが必要です。\n";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "マイクからの入力音声を解析し、リアルタイムで文字起こしするために、音声認識へのアクセスが必要です。";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -533,10 +533,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = VoiceInk;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSUIElement = NO;
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "VoiceInk needs to interact with your browser to detect the current website for applying website-specific configurations.";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "使用中のWebサイトを取得し、サイトごとの設定を適用するために、ブラウザとの連携アクセスが必要です。";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "VoiceInk needs access to your microphone to record audio for transcription.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "VoiceInk uses Apple Speech to provide realtime dictation previews from your microphone.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "音声を文字起こしするために、マイクへのアクセスが必要です。\n";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "マイクからの入力音声を解析し、リアルタイムで文字起こしするために、音声認識へのアクセスが必要です。";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
