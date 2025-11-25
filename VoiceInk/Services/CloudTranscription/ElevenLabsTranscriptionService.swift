@@ -303,9 +303,6 @@ final class ElevenLabsRealtimeTranscriptionService: RealtimeTranscriptionService
                 }
             } catch {
                 logger.error("Realtime websocket receive failed: \(error.localizedDescription)")
-                DispatchQueue.main.async { [weak self] in
-                    self?.onError?("Realtime connection closed")
-                }
                 streamingTask?.cancel()
                 streamingTask = nil
                 shouldStopStreaming = false
