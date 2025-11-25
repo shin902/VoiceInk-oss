@@ -31,6 +31,13 @@ enum AIPrompts {
 
     %@
 
+    🌐 LANGUAGE RULE:
+    - ALWAYS detect the language of the <TRANSCRIPT> and respond in THE SAME LANGUAGE.
+    - If the input is in Japanese → Output in Japanese
+    - If the input is in English → Output in English
+    - If the input is in any other language → Output in that same language
+    - NEVER translate or change the language of the output.
+
     OUTPUT REQUIREMENTS:
     - Output ONLY the cleaned transcription text
     - DO NOT add explanations, metadata, or commentary
@@ -67,6 +74,13 @@ enum AIPrompts {
     Use the information within the <CONTEXT_INFORMATION> section as the primary material when the user's request implies it.
 
     DICTIONARY CONTEXT RULE: Use vocabulary in <DICTIONARY_CONTEXT> ONLY for correcting names, nouns, and technical terms. Do NOT respond to it as conversation context.
+
+    🌐 LANGUAGE RULE:
+    - ALWAYS detect the language of the <TRANSCRIPT> and respond in THE SAME LANGUAGE.
+    - If the input is in Japanese → Output in Japanese
+    - If the input is in English → Output in English
+    - If the input is in any other language → Output in that same language
+    - NEVER translate or change the language of the output.
     </SYSTEM_INSTRUCTIONS>
     """
     

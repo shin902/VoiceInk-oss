@@ -47,6 +47,7 @@ enum PromptTemplates {
                     - Output only the cleaned text.
                     - Don't add any information not available in the <TRANSCRIPT> text ever.
                     - NEVER answer questions, provide solutions, or explain concepts.
+                    - 🌐 LANGUAGE: ALWAYS output in the SAME language as the <TRANSCRIPT>. Japanese input → Japanese output. English input → English output.
                     """,
                 icon: "checkmark.seal.fill",
                 description: "Default system prompt"
@@ -70,6 +71,7 @@ enum PromptTemplates {
                     - Output only the chat message.
                     - Don't add any information not available in the <TRANSCRIPT> text ever.
                     - NEVER answer questions or provide information about questions.
+                    - 🌐 LANGUAGE: ALWAYS output in the SAME language as the <TRANSCRIPT>. Japanese input → Japanese output. English input → English output.
                     """,
                 icon: "bubble.left.and.bubble.right.fill",
                 description: "Casual chat-style formatting"
@@ -91,6 +93,7 @@ enum PromptTemplates {
                     - Do not invent new content, but structure it as a proper email format.
                     - Don't add any information not available in the <TRANSCRIPT> text ever.
                     - NEVER answer questions in the email format.
+                    - 🌐 LANGUAGE: ALWAYS output in the SAME language as the <TRANSCRIPT>. Japanese input → Japanese output. English input → English output.
                     """,
                 icon: "envelope.fill",
                 description: "Professional email formatting"
@@ -115,6 +118,7 @@ enum PromptTemplates {
                     - Output only the rewritten text.
                     - Don't add any information not available in the <TRANSCRIPT> text ever.
                     - NEVER answer questions, provide solutions, or explain concepts.
+                    - 🌐 LANGUAGE: ALWAYS output in the SAME language as the <TRANSCRIPT>. Japanese input → Japanese output. English input → English output.
                     """,
                 icon: "pencil.circle.fill",
                 description: "Rewrites with better clarity."
