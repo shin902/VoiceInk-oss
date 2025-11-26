@@ -14,6 +14,7 @@ enum BrowserType {
     case orion
     case zen
     case yandex
+    case comet
     
     var scriptName: String {
         switch self {
@@ -28,6 +29,7 @@ enum BrowserType {
         case .orion: return "orionURL"
         case .zen: return "zenURL"
         case .yandex: return "yandexURL"
+        case .comet: return "cometURL"
         }
     }
     
@@ -44,6 +46,7 @@ enum BrowserType {
         case .orion: return "com.kagi.kagimacOS"
         case .zen: return "app.zen-browser.zen"
         case .yandex: return "ru.yandex.desktop.yandex-browser"
+        case .comet: return "ai.perplexity.comet"
         }
     }
     
@@ -60,11 +63,12 @@ enum BrowserType {
         case .orion: return "Orion"
         case .zen: return "Zen Browser"
         case .yandex: return "Yandex Browser"
+        case .comet: return "Comet"
         }
     }
     
     static var allCases: [BrowserType] {
-        [.safari, .arc, .chrome, .edge, .brave, .opera, .vivaldi, .orion, .yandex]
+        [.safari, .arc, .chrome, .edge, .brave, .opera, .vivaldi, .orion, .yandex .comet]
     }
     
     static var installedBrowsers: [BrowserType] {
