@@ -13,23 +13,32 @@ jobs:
     runs-on: macos-latest
     env:
       WHISPER_CPP_DIR: ${{ github.workspace }}/../whisper.cpp
+      WHISPER_CACHE_DIR: ${{ github.workspace }}/.cache/whisper.cpp
       WHISPER_FRAMEWORK: ${{ github.workspace }}/../whisper.cpp/build-apple/whisper.xcframework
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Ensure whisper cache directory exists
-      run: mkdir -p "$WHISPER_CPP_DIR"
+    - name: Ensure whisper directories exist
+      run: |
+        mkdir -p "$WHISPER_CPP_DIR"
+        mkdir -p "$WHISPER_CACHE_DIR"
 
     - name: Restore whisper.xcframework cache
       id: whisper-cache
       uses: actions/cache@v4
       with:
-        path: ${{ env.WHISPER_CPP_DIR }}
+        path: ${{ env.WHISPER_CACHE_DIR }}
         key: whisper-${{ runner.os }}-${{ hashFiles('Makefile', '.github/workflows/build-and-release.yml') }}
         restore-keys: |
           whisper-${{ runner.os }}-
+
+    - name: Sync cached whisper into build location
+      if: steps.whisper-cache.outputs.cache-hit == 'true'
+      run: |
+        rsync -a --delete "$WHISPER_CACHE_DIR"/ "$WHISPER_CPP_DIR"/
+        ls "$WHISPER_CPP_DIR"
 
     - name: Setup Xcode
       uses: maxim-lobanov/setup-xcode@v1
@@ -40,7 +49,12 @@ jobs:
       run: make check
 
     - name: Build whisper.cpp framework
-      run: make whisper
+      run: WHISPER_CPP_DIR="$WHISPER_CPP_DIR" make whisper
+
+    - name: Save whisper build back to cache
+      if: always()
+      run: |
+        rsync -a --delete "$WHISPER_CPP_DIR"/ "$WHISPER_CACHE_DIR"/
 
     - name: Build VoiceInk
       run: |

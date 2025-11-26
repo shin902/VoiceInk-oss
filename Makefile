@@ -1,8 +1,8 @@
 # Define a directory for dependencies relative to the project
 # This ensures compatibility with Xcode project references
 # Xcode project expects whisper.cpp to be a sibling directory
-WHISPER_CPP_DIR := $(shell dirname $(shell pwd))/whisper.cpp
-FRAMEWORK_PATH := $(WHISPER_CPP_DIR)/build-apple/whisper.xcframework
+WHISPER_CPP_DIR ?= $(shell dirname $(shell pwd))/whisper.cpp
+FRAMEWORK_PATH ?= $(WHISPER_CPP_DIR)/build-apple/whisper.xcframework
 
 .PHONY: all clean whisper setup build check healthcheck help dev run
 
